@@ -19,7 +19,7 @@ public class TodosTest {
 
         Task[] result = todos.search("Хлеб");
 
-        Assertions.assertEquals(3, result.length);
+        Assertions.assertArrayEquals(new Task[]{simpleTask, epic, meeting}, result);
     }
     @Test
     public void shouldFindOnlyOneTask() {
@@ -32,8 +32,7 @@ public class TodosTest {
 
         Task[] result = todos.search("маме");
 
-        Assertions.assertEquals(1, result.length);
-        Assertions.assertEquals(task1, result[0]);
+        Assertions.assertArrayEquals(new Task[]{task1}, result);
     }
 
     @Test
@@ -50,6 +49,6 @@ public class TodosTest {
 
         Task[] result = todos.search("Молоко");
 
-        Assertions.assertEquals(3, result.length);
+        Assertions.assertArrayEquals(new Task[]{simpleTask, epic, meeting}, result);
     }
 }
